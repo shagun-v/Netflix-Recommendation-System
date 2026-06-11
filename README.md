@@ -1,17 +1,6 @@
-# Test Heading
+# Netflix Recommendation System using Collaborative Filtering and Matrix Factorization
 
-## Test Subheading
-
-- Bullet 1
-- Bullet 2
-
-| Model | RMSE |
-|--------|------|
-| SVD | 0.9631 |
-
-
-Netflix Recommendation System using Collaborative Filtering and Matrix Factorization
-Project Overview
+## Project Overview
 
 This project develops a personalized movie recommendation system using the Netflix Prize Dataset, one of the most influential datasets in recommender system research.
 
@@ -19,36 +8,48 @@ The objective is to learn user preferences from historical interactions, predict
 
 Three recommendation approaches were explored and compared:
 
-Popularity-Based Recommendation
-Item-Based Collaborative Filtering
-Matrix Factorization (SVD)
+* Popularity-Based Recommendation
+* Item-Based Collaborative Filtering
+* Matrix Factorization (SVD)
 
 The models were evaluated using both rating prediction and recommendation ranking metrics.
 
-Problem Statement
+---
+
+## Problem Statement
 
 Modern streaming platforms rely on recommendation systems to improve user engagement and content discovery.
 
 Using historical user-movie interactions from the Netflix Prize Dataset, this project aims to:
 
-Learn user preferences
-Predict ratings for unseen movies
-Generate Top-K personalized recommendations
-Compare multiple recommendation approaches
-Evaluate recommendation quality and ranking performance
-Dataset
-Original Dataset
-Metric	Value
-Ratings	100,480,507
-Users	480,189
-Movies	17,770
-Rating Scale	1–5
-Filtered Dataset Used
-Metric	Value
-Ratings	18,687,764
-Users	148,083
-Movies	4,491
-Dataset Source
+* Learn user preferences
+* Predict ratings for unseen movies
+* Generate Top-K personalized recommendations
+* Compare multiple recommendation approaches
+* Evaluate recommendation quality and ranking performance
+
+---
+
+## Dataset
+
+### Original Dataset
+
+| Metric       | Value       |
+| ------------ | ----------- |
+| Ratings      | 100,480,507 |
+| Users        | 480,189     |
+| Movies       | 17,770      |
+| Rating Scale | 1–5         |
+
+### Filtered Dataset Used
+
+| Metric  | Value      |
+| ------- | ---------- |
+| Ratings | 18,687,764 |
+| Users   | 148,083    |
+| Movies  | 4,491      |
+
+### Dataset Source
 
 Netflix Prize Dataset:
 
@@ -56,65 +57,81 @@ https://www.kaggle.com/datasets/netflix-inc/netflix-prize-data
 
 Due to GitHub file size limitations, the dataset is not included in this repository.
 
-Data Processing Pipeline
+---
+
+## Data Processing Pipeline
 
 The following preprocessing steps were performed:
 
-Parsed Netflix Prize text files into structured tabular format
-Applied memory-efficient data types
-Merged movie metadata
-Converted rating dates to datetime format
-Filtered inactive users
-Filtered low-support movies
-Generated a clean user-item interaction dataset
-Recommendation Models
-1. Popularity-Based Recommendation
+* Parsed Netflix Prize text files into structured tabular format
+* Applied memory-efficient data types
+* Merged movie metadata
+* Converted rating dates to datetime format
+* Filtered inactive users
+* Filtered low-support movies
+* Generated a clean user-item interaction dataset
+
+---
+
+## Recommendation Models
+
+### 1. Popularity-Based Recommendation
 
 Recommends movies using average ratings and rating counts.
 
-Advantages
+**Advantages**
 
-Simple
-Fast
-Effective for new users
+* Simple
+* Fast
+* Effective for new users
 
-Limitations
+**Limitations**
 
-No personalization
-2. Item-Based Collaborative Filtering
+* No personalization
+
+---
+
+### 2. Item-Based Collaborative Filtering
 
 Computes similarity between movies using user rating behavior.
 
-Advantages
+**Advantages**
 
-Personalized recommendations
-Easy to interpret
+* Personalized recommendations
+* Easy to interpret
 
-Limitations
+**Limitations**
 
-Sensitive to sparsity
-Computationally expensive
-3. Matrix Factorization (SVD)
+* Sensitive to sparsity
+* Computationally expensive
+
+---
+
+### 3. Matrix Factorization (SVD)
 
 Decomposes the user-item interaction matrix into latent user and movie factors.
 
-Advantages
+**Advantages**
 
-Captures hidden preference patterns
-Handles sparse datasets effectively
-Strong recommendation performance
+* Captures hidden preference patterns
+* Handles sparse datasets effectively
+* Strong recommendation performance
 
-Limitations
+**Limitations**
 
-Less interpretable than neighborhood-based methods
-Evaluation Metrics
-RMSE
+* Less interpretable than neighborhood-based methods
+
+---
+
+## Evaluation Metrics
+
+### RMSE
 
 Root Mean Squared Error measures rating prediction accuracy.
 
 Lower values indicate better performance.
 
-MAP@10
+### MAP@10
 
 Mean Average Precision at 10 measures recommendation ranking quality.
 
@@ -122,42 +139,60 @@ A movie is considered relevant if:
 
 Rating ≥ 3.5
 
-Precision@10
+### Precision@10
 
 Measures the proportion of relevant items among the Top-10 recommendations.
 
 Higher values indicate better recommendation quality.
 
-Experimental Results
-Model	RMSE	MAP@10	Precision@10
-Item-Based CF	1.0429	0.8307	0.1698
-SVD	0.9631	0.8792	0.1703
-Best Performing Model
+---
+
+## Experimental Results
+
+| Model         | RMSE       | MAP@10     | Precision@10 |
+| ------------- | ---------- | ---------- | ------------ |
+| Item-Based CF | 1.0429     | 0.8307     | 0.1698       |
+| SVD           | **0.9631** | **0.8792** | **0.1703**   |
+
+### Best Performing Model
 
 Matrix Factorization (SVD) achieved the best overall performance across all evaluation metrics.
 
-Recommendation Example
-Selected User
+---
+
+## Recommendation Example
+
+### Selected User
 
 User ID: 305344
 
-Example Recommendations Generated by SVD
-Movie	Predicted Rating
-Doctor Zhivago	3.5082
-Nuremberg	2.8792
-Ray	2.8545
-The Incredibles: Bonus Material	2.6354
-Hackers	2.3565
+### Example Recommendations Generated by SVD
+
+| Movie                           | Predicted Rating |
+| ------------------------------- | ---------------- |
+| Doctor Zhivago                  | 3.5082           |
+| Nuremberg                       | 2.8792           |
+| Ray                             | 2.8545           |
+| The Incredibles: Bonus Material | 2.6354           |
+| Hackers                         | 2.3565           |
 
 These recommendations are generated using latent user-item relationships learned through matrix factorization.
 
-Key Insights
-Dataset sparsity remains one of the primary challenges in recommendation systems.
-Popularity-based methods provide strong baseline recommendations but lack personalization.
-Item-Based Collaborative Filtering improves personalization but struggles with sparse interaction data.
-SVD significantly outperformed Item-Based Collaborative Filtering across prediction and ranking metrics.
-Ranking metrics provide a better measure of recommendation usefulness than rating prediction metrics alone.
-Repository Structure
+---
+
+## Key Insights
+
+* Dataset sparsity remains one of the primary challenges in recommendation systems.
+* Popularity-based methods provide strong baseline recommendations but lack personalization.
+* Item-Based Collaborative Filtering improves personalization but struggles with sparse interaction data.
+* SVD significantly outperformed Item-Based Collaborative Filtering across prediction and ranking metrics.
+* Ranking metrics provide a better measure of recommendation usefulness than rating prediction metrics alone.
+
+---
+
+## Repository Structure
+
+```text
 Netflix-Recommendation-System/
 │
 ├── notebooks/
@@ -173,41 +208,58 @@ Netflix-Recommendation-System/
 ├── requirements.txt
 ├── LICENSE
 └── .gitignore
-Reproducing Results
-Step 1: Install Dependencies
+```
+
+---
+
+## Reproducing Results
+
+### Step 1: Install Dependencies
+
+```bash
 pip install -r requirements.txt
-Step 2: Download Dataset
+```
+
+### Step 2: Download Dataset
 
 Download the Netflix Prize Dataset from:
 
 https://www.kaggle.com/datasets/netflix-inc/netflix-prize-data
 
-Step 3: Place Dataset Files
+### Step 3: Place Dataset Files
 
 Place the required dataset files in the project directory.
 
-Step 4: Run Notebook
+### Step 4: Run Notebook
 
 Open:
 
+```text
 notebooks/NETFLIX_FINAL.ipynb
+```
 
 Run all cells sequentially to reproduce:
 
-Data preprocessing
-Exploratory Data Analysis
-Model training
-Evaluation
-Recommendation generation
-Future Improvements
+* Data preprocessing
+* Exploratory Data Analysis
+* Model training
+* Evaluation
+* Recommendation generation
+
+---
+
+## Future Improvements
 
 Potential enhancements include:
 
-Neural Collaborative Filtering
-Hybrid Recommendation Systems
-Explainable Recommendations
-Temporal Recommendation Models
-Real-Time Recommendation Pipelines
-Author
+* Neural Collaborative Filtering
+* Hybrid Recommendation Systems
+* Explainable Recommendations
+* Temporal Recommendation Models
+* Real-Time Recommendation Pipelines
+
+---
+
+## Author
 
 Developed as part of the Recommendation Systems for Personalized Content Discovery project using the Netflix Prize Dataset.
