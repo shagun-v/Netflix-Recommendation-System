@@ -195,19 +195,13 @@ These recommendations are generated using latent user-item relationships learned
 ```text
 Netflix-Recommendation-System/
 │
-├── notebooks/
-│   └── NETFLIX_FINAL.ipynb
-│
-├── report/
-│   └── Netflix_Technical_Report.pdf
-│
+├── notebook/
 ├── presentation/
-│   └── Netflix_Presentation.pdf
-│
-├── README.md
-├── requirements.txt
+├── report/
+├── .gitignore 
 ├── LICENSE
-└── .gitignore
+├── README.md
+└── requirements.txt
 ```
 
 ---
