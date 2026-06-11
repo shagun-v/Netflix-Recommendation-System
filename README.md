@@ -1,3 +1,15 @@
+# Test Heading
+
+## Test Subheading
+
+- Bullet 1
+- Bullet 2
+
+| Model | RMSE |
+|--------|------|
+| SVD | 0.9631 |
+
+
 Netflix Recommendation System using Collaborative Filtering and Matrix Factorization
 Project Overview
 
