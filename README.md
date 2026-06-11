@@ -195,7 +195,7 @@ These recommendations are generated using latent user-item relationships learned
 ```text
 Netflix-Recommendation-System/
 │
-├── notebook/
+├── notebooks/
 ├── presentation/
 ├── report/
 ├── .gitignore 
